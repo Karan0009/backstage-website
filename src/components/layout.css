@@ -70,7 +70,7 @@ a:hover {
   left: 0;
   z-index: 2;
   background: #00000070;
-  animation: fadeIn 500ms linear forwards;
+  /* animation: fadeIn 500ms linear forwards; */
 }
 
 .close-modal {
@@ -106,7 +106,7 @@ a:hover {
   align-items: center;
   font-size: 24px;
   z-index: 10;
-  animation: fadeIn 200ms linear forwards;
+  /* animation: fadeIn 200ms linear forwards; */
 }
 
 .page-header,
