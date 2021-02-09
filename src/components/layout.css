@@ -61,18 +61,52 @@ a:hover {
   }
 }
 
-.form-submit-modal {
+.backdrop {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #00000070;
+  animation: fadeIn 500ms linear forwards;
+}
+
+.close-modal {
   position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+
+.form-submit-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-submit-modal-content svg {
+  font-size: 60px;
+}
+
+.form-submit-modal {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: var(--tertiary-text-color);
-  min-width: 500px;
-  min-height: 460px;
+  min-width: 200px;
+  min-height: 160px;
+  width: 30vw;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
+  z-index: 10;
+  animation: fadeIn 200ms linear forwards;
 }
 
 .page-header,
@@ -214,6 +248,8 @@ textarea.invalid.touched {
 .features-slide {
   background: var(--background-color);
   min-height: 100vh;
+  padding: 40px 0;
+  /* margin-bottom: 50px; */
 }
 
 .features-list {
@@ -256,6 +292,7 @@ textarea.invalid.touched {
 
 .upcoming-slide {
   min-height: 100vh;
+  padding: 40px 0;
 }
 
 .upcoming-features-list {

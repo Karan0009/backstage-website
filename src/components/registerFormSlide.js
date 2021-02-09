@@ -2,7 +2,11 @@ import React, { useState } from "react"
 import Input from "./input"
 import Textarea from "./textarea"
 
-const RegisterFormSlide = () => {
+const RegisterFormSlide = props => {
+  const handleFormSubmit = e => {
+    e.preventDefault()
+    props.openModal()
+  }
   return (
     <>
       <div id="register" className="container register-form-slide">
@@ -11,6 +15,7 @@ const RegisterFormSlide = () => {
         </h1>
         <form
           className="register-form"
+          onSubmit={handleFormSubmit}
           style={{
             margin: "80px 0",
           }}
@@ -99,7 +104,9 @@ const RegisterFormSlide = () => {
               }}
             />
           </div>
-          <button className="register-btn">Submit</button>
+          <button className="register-btn" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </>

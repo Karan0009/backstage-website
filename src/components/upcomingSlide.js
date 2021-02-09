@@ -6,7 +6,7 @@ import ArIcon from "../svgs/ar.svg"
 const UpcomingSlide = ({ features }) => {
   return (
     <div className="container upcoming-slide">
-      <h1 className="slide--title" style={{ marginTop: "80px" }}>
+      <h1 className="slide--title" style={{ marginTop: "40px" }}>
         Upcoming 🔥
       </h1>
 

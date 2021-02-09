@@ -17,6 +17,17 @@ import CrossIcon from "../svgs/cross.svg"
 
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(true)
+
+  const closeModal = () => {
+    document.querySelector("html").style.overflow = "unset"
+    setIsOpen(false)
+  }
+
+  const openModal = () => {
+    document.querySelector("html").style.overflow = "hidden"
+    setIsOpen(true)
+  }
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -61,17 +72,20 @@ const IndexPage = () => {
           },
         ]}
       />
-      <RegisterFormSlide />
+      <RegisterFormSlide openModal={openModal} />
       {isOpen && (
-        <div className="form-submit-modal">
-          <span>
-            <CrossIcon />
-          </span>
-          <div className="form-submit-modal-content">
-            <FiCheck />
-            <p>Done!</p>
+        <>
+          <div className="form-submit-modal">
+            <span className="close-modal" onClick={closeModal}>
+              <CrossIcon />
+            </span>
+            <div className="form-submit-modal-content">
+              <FiCheck />
+              <p>Done!</p>
+            </div>
           </div>
-        </div>
+          <div className="backdrop" onClick={closeModal}></div>
+        </>
       )}
     </Layout>
   )
