@@ -1,22 +1,80 @@
-import React from "react"
-import { Link } from "gatsby"
-
+import React, { useState } from "react"
 import Layout from "../components/layout"
 import Image from "../components/image"
+import HomeSlide from "../components/homeSlide"
 import SEO from "../components/seo"
+import FeaturesSlide from "../components/featuresSlide"
+import UpcomingSlide from "../components/upcomingSlide"
+import ArIcon from "../svgs/ar.svg"
+import PaidCall from "../svgs/paidCall.svg"
+import Pledge from "../svgs/Pledge.svg"
+import LiveStream from "../svgs/livestream.svg"
+import PaidMsg from "../svgs/paidMsg.svg"
+import CalenderIcon from "../svgs/CalenderReservation.svg"
+import RegisterFormSlide from "../components/registerFormSlide"
+import { FiCheck } from "react-icons/fi"
+import CrossIcon from "../svgs/cross.svg"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const [isOpen, setIsOpen] = useState(true)
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <HomeSlide />
+      <FeaturesSlide
+        features={[
+          { title: "Paid supporters", imageName: "paidSupporters" },
+          { title: "Post Media & Go Live", imageName: "postMedia" },
+          {
+            title: "Schedule your livestreams / Calendar",
+            imageName: "schedule",
+          },
+          { title: "Automated LIVE Giveaway", imageName: "automated" },
+          { title: "Refreshing User Interface", imageName: "refreshing" },
+        ]}
+      />
+      <UpcomingSlide
+        features={[
+          {
+            title: "Bookings on your Influencers Services",
+            svg: CalenderIcon,
+          },
+          {
+            title: "Paid private / Group calls",
+            svg: PaidCall,
+          },
+          {
+            title: "Customizable monthly support pledge",
+            svg: Pledge,
+          },
+          {
+            title: "Stream games/screens",
+            svg: LiveStream,
+          },
+          {
+            title: "LIVE AR Games",
+            svg: ArIcon,
+          },
+          {
+            title: "Paid Messaging",
+            svg: PaidMsg,
+          },
+        ]}
+      />
+      <RegisterFormSlide />
+      {isOpen && (
+        <div className="form-submit-modal">
+          <span>
+            <CrossIcon />
+          </span>
+          <div className="form-submit-modal-content">
+            <FiCheck />
+            <p>Done!</p>
+          </div>
+        </div>
+      )}
+    </Layout>
+  )
+}
 
 export default IndexPage
