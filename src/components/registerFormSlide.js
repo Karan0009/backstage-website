@@ -70,7 +70,7 @@ const RegisterFormSlide = props => {
               inputContainerClassName="register-input-container"
               id="otherSocial"
               name="otherSocial"
-              placeholder="otherSocial"
+              placeholder="other social"
               className="register-input"
             />
           </div>
