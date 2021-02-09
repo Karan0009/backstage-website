@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import HomeSlide from "../components/homeSlide"
 import SEO from "../components/seo"
 import FeaturesSlide from "../components/featuresSlide"
@@ -16,7 +15,7 @@ import { FiCheck } from "react-icons/fi"
 import CrossIcon from "../svgs/cross.svg"
 
 const IndexPage = () => {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   const closeModal = () => {
     document.querySelector("html").style.overflow = "unset"
@@ -76,7 +75,13 @@ const IndexPage = () => {
       {isOpen && (
         <>
           <div className="form-submit-modal">
-            <span className="close-modal" onClick={closeModal}>
+            <span
+              tabIndex={0}
+              role="button"
+              className="close-modal"
+              onKeyDown={closeModal}
+              onClick={closeModal}
+            >
               <CrossIcon />
             </span>
             <div className="form-submit-modal-content">
@@ -84,7 +89,12 @@ const IndexPage = () => {
               <p>Done!</p>
             </div>
           </div>
-          <div className="backdrop" onClick={closeModal}></div>
+          <div
+            role="none"
+            className="backdrop"
+            onKeyDown={closeModal}
+            onClick={closeModal}
+          ></div>
         </>
       )}
     </Layout>
