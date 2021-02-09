@@ -26,7 +26,7 @@ const Image = ({ fileName }) => {
 
       logoImage: file(relativePath: { eq: "backstage-logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
           }
         }

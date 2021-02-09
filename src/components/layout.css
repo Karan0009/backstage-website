@@ -185,12 +185,28 @@ textarea.invalid.touched {
 /* home-slide styles */
 .home-slide {
   background-color: var(--background-color);
-  min-height: calc(100vh - var(--header-height));
+  background: url("../images/UpdatedModel.png"), var(--background-color);
+  background-repeat: no-repeat;
+  background-position: right;
+  /* min-height: calc(100vh - var(--header-height)); */
+  height: 100%;
   position: relative;
+  padding-bottom: 100px;
 }
+/* .home-slide::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+} */
 .logo-container {
   width: 150px;
   height: 150px;
+  z-index: 2;
 }
 
 .home-slide-title {
@@ -202,6 +218,7 @@ textarea.invalid.touched {
   line-height: 1.52;
   letter-spacing: 6px;
   text-align: center;
+  z-index: 2;
 }
 
 .home-slide-subtitle {
@@ -214,6 +231,7 @@ textarea.invalid.touched {
   line-height: 1.5;
   letter-spacing: 2.72px;
   max-width: 800px;
+  z-index: 2;
 }
 
 .register-link {
@@ -224,6 +242,7 @@ textarea.invalid.touched {
   border-radius: 20px;
   margin-top: 60px;
   transition: 200ms linear all;
+  z-index: 2;
 }
 
 .register-link:hover {
@@ -236,6 +255,7 @@ textarea.invalid.touched {
   /* background: pink; */
   position: relative;
   bottom: -50px;
+  z-index: 2;
 }
 .home-slide-down-icon-container svg {
   color: var(--tertiary-text-color);
@@ -350,6 +370,14 @@ textarea.invalid.touched {
 }
 
 @media only screen and (max-width: 768px) {
+  .home-slide {
+    background: url("../images/UpdatedModel.png"), var(--background-color);
+    /* background-position-x: 200px; */
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position: right;
+  }
   .home-slide-title {
     font-size: 3em;
   }
@@ -389,6 +417,11 @@ textarea.invalid.touched {
 }
 
 @media only screen and (max-width: 480px) {
+  .home-slide {
+    background: url("../images/UpdatedModel.png"), var(--background-color);
+    /* background-position-x: 200px; */
+    background-position-y: -200px;
+  }
   .home-slide-title {
     font-size: 2em;
   }

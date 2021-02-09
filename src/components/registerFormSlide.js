@@ -74,13 +74,13 @@ const RegisterFormSlide = props => {
               className="register-input"
             />
           </div>
-          <div className="row input-row" style={{ justifyContent: "center" }}>
+          <div className="row input-row">
             <Input
               type="text"
               inputContainerClassName="register-input-container"
-              id="phoneNumber"
-              name="phoneNumber"
-              placeholder="Phone"
+              id="country"
+              name="country"
+              placeholder="Country"
               className="register-input"
             />
           </div>
