@@ -3,9 +3,15 @@ import Input from "./input"
 import Textarea from "./textarea"
 
 const RegisterFormSlide = props => {
-  const handleFormSubmit = e => {
-    e.preventDefault()
-    props.openModal()
+  const handleFormSubmit = async e => {
+    try {
+      e.preventDefault()
+      const response = await fetch("/api/registerform")
+      console.log(await response.json())
+      props.openModal()
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <>
