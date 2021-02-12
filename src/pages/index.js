@@ -16,13 +16,15 @@ import CrossIcon from "../svgs/cross.svg"
 
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [modalText, setModalText] = useState("Done!")
 
   const closeModal = () => {
     document.querySelector("html").style.overflow = "unset"
     setIsOpen(false)
   }
 
-  const openModal = () => {
+  const openModal = modalText => {
+    setModalText(modalText)
     document.querySelector("html").style.overflow = "hidden"
     setIsOpen(true)
   }
@@ -86,7 +88,7 @@ const IndexPage = () => {
             </span>
             <div className="form-submit-modal-content">
               <FiCheck />
-              <p>Done!</p>
+              <p>{modalText}</p>
             </div>
           </div>
           <div

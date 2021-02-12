@@ -62,6 +62,7 @@ const RegisterFormSlide = props => {
   })
 
   const [formIsValid, setFormIsValid] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     if (
@@ -80,7 +81,8 @@ const RegisterFormSlide = props => {
   const handleFormSubmit = async e => {
     try {
       e.preventDefault()
-      fetch("/.netlify/functions/registerform", {
+      setIsLoading(true)
+      const response = await fetch("/.netlify/functions/registerform", {
         method: "POST",
         body: JSON.stringify({
           name: username.value.trim(),
@@ -93,17 +95,35 @@ const RegisterFormSlide = props => {
           feedback: feedback.value.trim(),
         }),
       })
-        .then(response => {
-          return response.json()
+      setIsLoading(false)
+      const data = await response.json()
+      if (data.success) {
+        props.openModal("Done!")
+        setUsername({ ...username, valid: false, value: "", touched: false })
+        setInstagram({ ...instagram, valid: false, value: "", touched: false })
+        setEmail({ ...email, valid: false, value: "", touched: false })
+        setPhoneNumber({
+          ...phoneNumber,
+          valid: false,
+          value: "",
+          touched: false,
         })
-        .then(data => {
-          console.log(data)
+        setTikTok({ ...tikTok, valid: false, value: "", touched: false })
+        setOtherSocial({
+          ...otherSocial,
+          valid: false,
+          value: "",
+          touched: false,
         })
-        .catch(err => {
-          console.log(err)
-        })
-      props.openModal()
+        setFeedback({ ...feedback, valid: false, value: "", touched: false })
+        setCountry({ ...country, valid: false, value: "", touched: false })
+        console.log(data)
+      } else {
+        console.log(data)
+        props.openModal("Error:(")
+      }
     } catch (error) {
+      props.openModal("Error:(")
       console.log(error)
     }
   }
@@ -311,7 +331,7 @@ const RegisterFormSlide = props => {
               errorClassName="register-input-error-message"
               id="otherSocial"
               name="otherSocial"
-              placeholder="other social"
+              placeholder="Other Social"
               className="register-input"
               value={otherSocial.value}
               valid={otherSocial.valid}
@@ -374,9 +394,9 @@ const RegisterFormSlide = props => {
           <button
             className="register-btn"
             type="submit"
-            disabled={formIsValid ? "" : "disabled"}
+            disabled={formIsValid && !isLoading ? "" : "disabled"}
           >
-            Submit
+            {isLoading ? "Loading" : "Submit"}
           </button>
         </form>
       </div>

@@ -2,12 +2,12 @@ const { GoogleSpreadsheet } = require("google-spreadsheet")
 const joi = require("joi")
 
 const schema = joi.object({
-  name: joi.string().alphanum().min(3).max(100).required(),
+  name: joi.string().min(3).max(100).required(),
   instagram: joi.string().alphanum().max(200).required(),
   tiktok: joi.string().alphanum().max(200).required(),
   otherSocial: joi.string().max(200).empty(""),
   country: joi.string().max(200).required(),
-  feedback: joi.string().alphanum().min(3).max(1000).required(),
+  feedback: joi.string().min(3).max(1000).required(),
   phone: joi.number().required(),
   email: joi.string().email().max(200).required(),
 })
