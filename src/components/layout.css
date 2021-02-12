@@ -49,6 +49,11 @@ a:hover {
   outline-width: 0;
 }
 
+button:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 /* my styles */
 
 @keyframes fadeIn {
@@ -192,6 +197,13 @@ textarea.invalid.touched {
 }
 .input-row {
   margin-bottom: 50px;
+}
+
+.register-input-error-message {
+  position: absolute;
+  color: var(--tertiary-text-color);
+  left: 5%;
+  top: -30px;
 }
 
 /* home-slide styles */
@@ -425,6 +437,9 @@ textarea.invalid.touched {
     margin-left: auto;
     width: auto;
     margin-top: 20px;
+  }
+  .register-input-error-message {
+    top: -15px;
   }
 }
 
