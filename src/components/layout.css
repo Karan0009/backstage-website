@@ -56,16 +56,6 @@ button:disabled {
 
 /* my styles */
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 100%;
-  }
-}
-
 .error-page {
   min-height: calc(100vh - 2 * var(--header-height));
   display: flex;
@@ -87,7 +77,6 @@ button:disabled {
   left: 0;
   z-index: 2;
   background: #00000070;
-  /* animation: fadeIn 500ms linear forwards; */
 }
 
 .close-modal {
@@ -217,25 +206,20 @@ textarea.invalid.touched {
   position: relative;
   padding-bottom: 100px;
 }
-/* .home-slide::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
-} */
+
+.m-top-50 {
+  margin-top: 50px;
+}
 .logo-container {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 80px;
+
   z-index: 2;
 }
 
 .home-slide-title {
   color: var(--main-text-color);
-  font-size: 4.6em;
+  font-size: 4em;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -247,14 +231,14 @@ textarea.invalid.touched {
 
 .home-slide-subtitle {
   color: var(--tertiary-text-color);
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
   letter-spacing: 2.72px;
-  max-width: 800px;
+  max-width: 700px;
   z-index: 2;
 }
 
@@ -278,7 +262,7 @@ textarea.invalid.touched {
 .home-slide-down-icon-container {
   /* background: pink; */
   position: relative;
-  bottom: -50px;
+  bottom: -20px;
   z-index: 2;
 }
 .home-slide-down-icon-container svg {
@@ -405,6 +389,9 @@ textarea.invalid.touched {
   .home-slide-title {
     font-size: 3em;
   }
+  .logo-container {
+    height: 100px;
+  }
   .features-list {
     grid-template-columns: 1fr;
   }
@@ -454,6 +441,9 @@ textarea.invalid.touched {
   }
   .home-slide-subtitle {
     font-size: 1em;
+  }
+  .m-top-50 {
+    margin-top: 20px;
   }
 }
 

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `backstage website`,
+    title: `thebackstage website`,
     description: `We help creators pursue their talent and generate subscription revenue through their fanbase`,
     author: `karansingh`,
   },
