@@ -10,7 +10,7 @@ const HomeSlide = () => {
         </div>
         <h1 className="home-slide-title">THE BACKSTAGE</h1>
         <p
-          className="home-slide-subtitle"
+          className="home-slide-subtitle m-top-50"
           style={{ fontStyle: "italic", maxWidth: "600px" }}
         >
           Enabling the power of community to support talent, people and causes.

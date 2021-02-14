@@ -212,8 +212,7 @@ textarea.invalid.touched {
 }
 .logo-container {
   width: 100px;
-  height: 80px;
-
+  height: 100px;
   z-index: 2;
 }
 
@@ -223,10 +222,10 @@ textarea.invalid.touched {
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.52;
   letter-spacing: 6px;
   text-align: center;
   z-index: 2;
+  margin-top: 20px;
 }
 
 .home-slide-subtitle {
